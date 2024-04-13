@@ -1,15 +1,21 @@
-/* App.css */
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  color: white;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-default: #1a202c; /* Darker Gray - Text Color */
+  --background-default: #f7fafc; /* Lighter Gray - Background Color */
+  --primary-color: #5a67d8; /* Indigo - Primary Button Color */
+  --primary-hover: #434190; /* Darker Indigo - Primary Button Hover */
+  --border-color: #e2e8f0; /* Gray - Border Color */
 }
 
-/* .logo {
-   Add styles for your logo here 
- } */
-
-/* Add any additional global styles you want to apply to your app */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-default: #f7fafc; /* Light for Dark Mode - Text Color */
+    --background-default: #1a202c; /* Dark for Dark Mode - Background Color */
+    --primary-color: #9f7aea; /* Light Purple for Dark Mode - Primary */
+    --primary-hover: #805ad5; /* Darker Purple for Dark Mode - Hover */
+    --border-color: #4a5568; /* Dark Gray for Dark Mode - Border */
+  }
+}

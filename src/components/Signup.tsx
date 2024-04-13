@@ -14,44 +14,44 @@ const Signup: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <div className="glass-effect">
-        <h1 className="text-3xl font-bold text-center">Sign Up</h1>
-        <form onSubmit={handleSignup} className="space-y-6">
-        <input
-            className="w-full px-4 py-2 rounded-md"
+    <div className="flex items-center justify-center min-h-screen bg-[url('/path/to/your/background-image.jpg')] bg-cover bg-fixed">
+      <div className="w-full max-w-md p-8 space-y-8 backdrop-blur-md bg-black/40 rounded-lg shadow-lg border border-blue-700">
+        <h1 className="text-3xl font-bold text-center text-blue-300">Sign Up</h1>
+        <form className="space-y-6" onSubmit={handleSignup}>
+          <input
+            className="w-full px-4 py-2 text-gray-300 bg-black/50 border border-gray-300 rounded-md shadow-sm focus:border-blue-500"
             type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
-            className="w-full px-4 py-2 rounded-md"
+            className="w-full px-4 py-2 text-gray-300 bg-black/50 border border-gray-300 rounded-md shadow-sm focus:border-blue-500"
             type="text"
             placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
           <input
-            className="w-full px-4 py-2 rounded-md"
+            className="w-full px-4 py-2 text-gray-300 bg-black/50 border border-gray-300 rounded-md shadow-sm focus:border-blue-500"
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
           <input
-            className="w-full px-4 py-2 rounded-md"
+            className="w-full px-4 py-2 text-gray-300 bg-black/50 border border-gray-300 rounded-md shadow-sm focus:border-blue-500"
             type="password"
             placeholder="Confirm Password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
-           <div>
+          <div className="text-gray-300">
             <label htmlFor="userType" className="block mb-2 text-sm font-medium">Account Type</label>
             <select
               id="userType"
               name="userType"
-              className="block w-full px-3 py-2 rounded-md select-dropdown"
+              className="block w-full px-3 py-2 bg-black/50 border border-gray-300 rounded-md shadow-sm focus:border-blue-500"
               value={userType}
               onChange={(e) => setUserType(e.target.value)}
             >
@@ -61,17 +61,17 @@ const Signup: React.FC = () => {
           </div>
           <button
             type="submit"
-            className="w-full px-4 py-2 rounded-md"
+            className="w-full px-4 py-2 font-bold text-blue-500 bg-transparent border-2 border-blue-500 rounded-md hover:bg-blue-500 hover:text-black"
           >
             Sign Up
           </button>
         </form>
         <div className="text-center">
-          <p>Already have an account?</p>
+          <p className="text-gray-300">Already have an account?</p>
           <button
             type="button"
             onClick={() => {/* Insert navigation to Login page logic here */}}
-            className="text-blue-300 hover:text-blue-500"
+            className="mt-2 text-blue-300 hover:text-blue-500"
           >
             Log In
           </button>

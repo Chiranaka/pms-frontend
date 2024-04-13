@@ -1,10 +1,10 @@
 import './App.css';
+import './index.css';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
-
 
 function App() {
   return (

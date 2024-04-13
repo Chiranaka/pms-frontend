@@ -1,102 +1,43 @@
-/* index.css */
 
-/* Basic reset */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+.backdrop-blur-md {
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.4); /* Dark semi-transparent black background */
 }
 
-body,
-html {
+
+/* Full Page Glassmorphism Background */
+html, body {
   height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #000101; /* Fallback for older browsers */
+  background-color: #000101; /* Fallback color */
   background-image: linear-gradient(135deg, #041316 10%, #2193b0 100%);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-family: 'Arial', sans-serif;
 }
 
-/* Glassmorphism effect for the form */
+/* Glass Effect for Login Container */
 .glass-effect {
   backdrop-filter: blur(16px);
-  background-color: rgba(255, 255, 255, 0.2); /* Translucent white */
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background-color: rgba(251, 249, 249, 0.2);
   border-radius: 12px;
-  padding: 2rem;
-  max-width: 400px; /* Set a max-width for larger viewports */
-  width: calc(100% - 40px); /* Full width minus padding on smaller screens */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-/* Style for input fields */
-input[type='text'],
-input[type='password'],
+/* Adjusting the backdrop blur for dark mode */
+.dark .glass-effect {
+  background-color: rgba(23, 25, 35, 0.75);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Enhancing select dropdown for glassmorphism */
 .select-dropdown {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  margin-bottom: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.2);
-  color: black;
-  font-size: 1rem;
-}
-
-input::placeholder {
-  color: white;
-  opacity: 0.7;
-}
-
-/* Styling the button */
-button {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  border: none;
-  color: #041316;
-  background-color: rgb(47, 121, 148);
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #e2e8f0;
-}
-
-/* Adjustments for the dropdown menu */
-.select-dropdown {
-  border-radius: 8px;
-  color: white;
   background-color: rgba(12, 7, 7, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(4px);
 }
 
-/* Media query for dark mode adjustments */
-@media (prefers-color-scheme: dark) {
-  .glass-effect {
-    background-color: rgba(23, 25, 35, 0.75);
-    border-color: rgba(255, 255, 255, 0.25);
-  }
-
-  input[type='text'],
-  input[type='password'],
-  .select-dropdown {
-    background-color: rgba(23, 25, 35, 0.75);
-  }
-
-  input[type='text']::placeholder,
-  input[type='password']::placeholder {
-    color: #e2e8f0;
-  }
+.dark .select-dropdown {
+  background-color: rgba(135, 144, 188, 0.85);
 }
-
-/*============================================ */

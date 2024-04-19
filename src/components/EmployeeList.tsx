@@ -1,4 +1,3 @@
-// src/components/EmployeeList.tsx
 import React, { useEffect, useState } from 'react';
 import { Employee } from '../types/Employee';
 import EmployeeListItem from './EmployeeListItem';
@@ -11,19 +10,22 @@ const EmployeeList: React.FC = () => {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/employees'); // Replace with your actual backend URL
+        const response = await fetch('http://localhost:9090/api/employees'); // Replace with your actual backend URL
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         const data: Employee[] = await response.json();
         setEmployees(data);
-      } catch (error: any) {
-        setError(error.message);
+      } catch (error: unknown) {
+        if (error instanceof Error) {
+          setError(error.message);
+        } else {
+          setError('An unknown error occurred.');
+        }
       } finally {
         setIsLoading(false);
       }
     };
-
     fetchEmployees();
   }, []);
 

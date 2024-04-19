@@ -1,16 +1,44 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
 
 const Signup: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [userType, setUserType] = useState('user');
+  const [userType, setUserType] = useState('user'); // Consider managing the role as an enum or constants if there are predefined roles
   const [email, setEmail] = useState('');
+  const navigate = useNavigate();
 
-  const handleSignup = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Implement your signup logic here
-    console.log('Creating account with email:', email, 'username:', username, 'password:', password, 'as:', userType);
+
+    // Basic front-end validation before sending the request
+    if (password !== confirmPassword) {
+      console.error("Passwords don't match.");
+      return;
+    }
+
+    // Create the user object based on your backend requirements
+    const newUser = {
+      username,
+      email,
+      password,
+      role: userType, // Assuming your backend accepts 'role' in the body
+    };
+
+    try {
+      // Replace the URL with your backend endpoint
+      const response = await axios.post('http://localhost:9090/auth/register', newUser);
+      console.log('Registration successful:', response.data);
+      
+      // You can navigate to the login page or directly log the user in and navigate based on role
+      navigate('/login');
+    } catch (error) {
+      console.error('Signup failed:', error);
+      // Handle errors, e.g., show an error message to the user
+    }
   };
 
   return (

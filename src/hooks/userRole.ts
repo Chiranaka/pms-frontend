@@ -1,30 +1,26 @@
+// src/hooks/useRoleBasedRedirect.ts
 import { useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 
-
-// Define a TypeScript interface for the session
 interface Session {
   user?: {
-    role?: 'admin' | 'user'; // Specify possible roles
+    role: 'admin' | 'user';
   }
 }
 
-const useRoleBasedRedirect = (session: Session) => {
+const useRoleBasedRedirect = (session: Session | null) => {
   const navigate = useNavigate();
 
-
   useEffect(() => {
-    if (session) {
-      const role = session.user?.role;
-
-      // Navigate to different pages based on user role
+    if (session && session.user) {
+      const role = session.user.role;
       if (role === "admin") {
         navigate("/admin-dashboard");
       } else if (role === "user") {
         navigate("/user-dashboard");
       }
     }
-  },  [session, navigate]); // Make sure to include history object in the dependency array
+  }, [session, navigate]);
 };
 
 export default useRoleBasedRedirect;

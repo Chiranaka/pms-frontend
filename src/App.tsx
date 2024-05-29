@@ -1,23 +1,16 @@
-import './App.css';
-import './index.css';
-import Login from './components/Login';
-import Signup from './components/Signup';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Navigate } from 'react-router-dom';
-import 'react-toastify/dist/ReactToastify.css';
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import AppLayout from './components/layout/AppLayout';
+import Routes from './routes';
 
-function App() {
+const App: React.FC = () => {
   return (
     <Router>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        {/* Add more routes as needed */}
-        {/* Redirect to login as a fallback */}
-        <Route path="*" element={<Navigate to="/login" />} />
-      </Routes>
+      <AppLayout>
+        <Routes />
+      </AppLayout>
     </Router>
   );
-}
+};
 
 export default App;

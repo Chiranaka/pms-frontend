@@ -1,21 +1,42 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-default: #1a202c; /* Darker Gray - Text Color */
-  --background-default: #f7fafc; /* Lighter Gray - Background Color */
-  --primary-color: #5a67d8; /* Indigo - Primary Button Color */
-  --primary-hover: #434190; /* Darker Indigo - Primary Button Hover */
-  --border-color: #e2e8f0; /* Gray - Border Color */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-default: #f7fafc; /* Light for Dark Mode - Text Color */
-    --background-default: #1a202c; /* Dark for Dark Mode - Background Color */
-    --primary-color: #9f7aea; /* Light Purple for Dark Mode - Primary */
-    --primary-hover: #805ad5; /* Darker Purple for Dark Mode - Hover */
-    --border-color: #4a5568; /* Dark Gray for Dark Mode - Border */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
   }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
 }

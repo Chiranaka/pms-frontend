@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { fetchAttendanceRecords } from '../services/attendanceService';
+import { AttendanceRecord } from '../types/AttendanceRecord';
 
 const Attendance: React.FC = () => {
-  const [attendanceRecords, setAttendanceRecords] = useState<any[]>([]);
+  const [attendanceRecords, setAttendanceRecords] = useState<AttendanceRecord[]>([]);
 
   useEffect(() => {
     const getAttendanceRecords = async () => {

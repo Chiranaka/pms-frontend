@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { fetchProjects } from '../services/projectService';
+import { Project } from '../types/Project';
 
 const Projects: React.FC = () => {
-  const [projects, setProjects] = useState<any[]>([]);
+  const [projects, setProjects] = useState<Project[]>([]);
 
   useEffect(() => {
     const getProjects = async () => {

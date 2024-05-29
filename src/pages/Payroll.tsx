@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { fetchPayrolls } from '../services/payrollService';
+import { PayrollRecord } from '../types/Payroll';
 
 const Payroll: React.FC = () => {
-  const [payrolls, setPayrolls] = useState<any[]>([]);
+  const [payrolls, setPayrolls] = useState<PayrollRecord[]>([]);
 
   useEffect(() => {
     const getPayrolls = async () => {

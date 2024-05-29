@@ -1,5 +1,7 @@
 {
   "name": "pms-frontend",
+  "author": "T_Dulwana",
+  "repository": "https://github.com/thenujad/pms-frontend.git",
   "private": true,
   "version": "0.0.0",
   "type": "module",

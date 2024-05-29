@@ -1,7 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .app-layout {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
 }
 
 .app-header {
@@ -14,6 +28,7 @@
   list-style: none;
   display: flex;
   gap: 15px;
+  justify-content: center;
 }
 
 .app-header nav ul li {
@@ -32,7 +47,12 @@
 
 .app-main {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
+  width: 100%;
 }
 
 .app-footer {
@@ -40,4 +60,5 @@
   padding: 10px;
   color: white;
   text-align: center;
+  width: 100%;
 }

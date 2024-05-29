@@ -1,4 +1,4 @@
-export interface Payroll {
+export interface PayrollRecord {
     id: string;
     employeeId: string;
     employeeName: string;

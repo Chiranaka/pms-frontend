@@ -1,19 +1,19 @@
 import api from './api';
-import { Payroll } from '../types/Payroll';
+import { PayrollRecord } from '../types/PayrollRecord';
 
 
-export const fetchPayrolls = async (): Promise<Payroll[]> => {
-  const response = await api.get<Payroll[]>('/payroll');
+export const fetchPayrolls = async (): Promise<PayrollRecord[]> => {
+  const response = await api.get<PayrollRecord[]>('/payroll');
   return response.data;
 };
 
-export const calculatePayroll = async (data: Payroll): Promise<Payroll> => {
-  const response = await api.post<Payroll>('/payroll/calculate', data);
+export const calculatePayroll = async (data: PayrollRecord): Promise<PayrollRecord> => {
+  const response = await api.post<PayrollRecord>('/payroll/calculate', data);
   return response.data;
 };
 
-export const fetchPayrollById = async (id: string): Promise<Payroll> => {
-  const response = await api.get<Payroll>(`/payroll/${id}`);
+export const fetchPayrollById = async (id: string): Promise<PayrollRecord> => {
+  const response = await api.get<PayrollRecord>(`/payroll/${id}`);
   return response.data;
 };
 

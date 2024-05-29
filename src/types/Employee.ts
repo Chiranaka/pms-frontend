@@ -1,7 +1,7 @@
 export interface Employee {
-    id: string;
-    name: string;
-    position: string;
-    department: string;
-    // Add other fields as necessary
-  }
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  position: string;
+}

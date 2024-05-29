@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import './AppLayout.css';
 
-const AppLayout: React.FC = () => {
+interface AppLayoutProps {
+  children: ReactNode;
+}
+
+const AppLayout: React.FC<AppLayoutProps> = ({ children })=> {
   return (
     <div className="app-layout">
       <header className="app-header">
@@ -21,7 +25,8 @@ const AppLayout: React.FC = () => {
         </nav>
       </header>
       <main className="app-main">
-        <Outlet />
+        {children}
+        <Outlet/>
       </main>
       <footer className="app-footer">
         <p>&copy; 2024 Your Company Name</p>

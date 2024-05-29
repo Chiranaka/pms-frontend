@@ -12,6 +12,7 @@ const UserTypeSelector: React.FC = () => {
 
   return (
     <div className="user-type-selector">
+      <img src="/path-to-your-logo.png" alt="Logo" className="logo" />
       <h2>Select Your User Type</h2>
       <div className="user-type-buttons">
         <button onClick={() => handleSelection('Staff')}>Staff</button>

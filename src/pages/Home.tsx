@@ -1,6 +1,6 @@
 import React from 'react';
 import UserTypeSelector from '../components/specific/UserTypeSelector';
-import './CSS/Home.css';
+import './global.css';
 
 const Home: React.FC = () => {
   return (

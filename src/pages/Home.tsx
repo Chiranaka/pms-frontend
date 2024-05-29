@@ -1,10 +1,16 @@
 import React from 'react';
+import UserTypeSelector from '../components/specific/UserTypeSelector';
+import './CSS/Home.css';
 
 const Home: React.FC = () => {
   return (
-    <div>
-      <h1>Home Page</h1>
-      {/* Your home page content */}
+    <div className="home-container">
+      <header className="home-header">
+        <h1>Project Management System</h1>
+      </header>
+      <main className="home-main">
+        <UserTypeSelector />
+      </main>
     </div>
   );
 };
